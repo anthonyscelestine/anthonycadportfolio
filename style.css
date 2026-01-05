@@ -1,100 +1,163 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-  }
-  
-  body {
-    background: #0e0e11;
-    color: #eaeaea;
-    overflow-x: hidden;
-  }
-  
-  nav {
-    padding: 25px 60px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
-  
-  .hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 60px;
-  }
-  
-  .hero h2 {
-    font-size: 3.5rem;
-    font-weight: 500;
-  }
-  
-  .hero p {
-    margin-top: 20px;
-    color: #aaa;
-    font-size: 1.2rem;
-  }
-  
-  .project {
-    display: flex;
-    align-items: center;
-    padding: 100px 60px;
-    gap: 60px;
-  }
-  
-  .project.reverse {
-    flex-direction: row-reverse;
-  }
-  
-  .project img {
-    width: 45%;
-    border-radius: 14px;
-  }
+:root {
+  --bg: #0a0c11;
+  --glass: rgba(255,255,255,0.05);
+  --blue: #4facfe;
+  --green: #43e97b;
+  --pink: #fa709a;
+  --text: #eaeaf0;
+  --muted: #a0a4b8;
+}
 
-  .project video {
-    width: 45%;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    object-fit: cover;
-  }
-  
-  .project .text {
-    width: 55%;
-  }
-  
-  .project h3 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .project p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #cfcfcf;
-  }
-  
-  .project span {
-    display: block;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #888;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 40px;
-    color: #777;
-  }
-  
-  /* Animation */
-  .fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-  }
-  
-  .fade.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Background glow */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(79,172,254,0.15), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(67,233,123,0.12), transparent 40%);
+  z-index: -1;
+}
+
+/* INTRO */
+.intro {
+  min-height: 100vh;
+  padding: 140px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro h1 {
+  font-size: 3.8rem;
+  line-height: 1.15;
+}
+
+.intro h1 span {
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro p {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* WORK */
+.work {
+  padding: 120px 60px;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 80px;
+}
+
+.project {
+  max-width: 1200px;
+  margin: 0 auto 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 60px;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border-radius: 26px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.project.reverse {
+  direction: rtl;
+}
+.project.reverse * {
+  direction: ltr;
+}
+
+.media video,
+.media img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.info h3 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.tags {
+  margin-top: 25px;
+}
+
+.tags span {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--pink));
+  color: #000;
+}
+
+/* CONTACT */
+.contact {
+  padding: 140px 60px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.contact-links {
+  margin-top: 40px;
+}
+
+.contact-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text);
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: #000;
+}
+
+/* ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
