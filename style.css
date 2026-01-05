@@ -81,6 +81,25 @@ body {
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project {
+  transition: 
+    transform 0.6s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.project-link:hover .project {
+  transform: translateY(-18px) scale(1.015);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.8),
+    0 0 40px rgba(79,172,254,0.15);
+}
+
 .project.reverse {
   direction: rtl;
 }
