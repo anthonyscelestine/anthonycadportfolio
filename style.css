@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    background: #0e0e11;
+    color: #eaeaea;
+    overflow-x: hidden;
+  }
+  
+  nav {
+    padding: 25px 60px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+  }
+  
+  .hero h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+  }
+  
+  .hero p {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 1.2rem;
+  }
+  
+  .project {
+    display: flex;
+    align-items: center;
+    padding: 100px 60px;
+    gap: 60px;
+  }
+  
+  .project.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .project img {
+    width: 45%;
+    border-radius: 14px;
+  }
+
+  .project video {
+    width: 45%;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    object-fit: cover;
+  }
+  
+  .project .text {
+    width: 55%;
+  }
+  
+  .project h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .project p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cfcfcf;
+  }
+  
+  .project span {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+  }
+  
+  /* Animation */
+  .fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  
+  .fade.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
